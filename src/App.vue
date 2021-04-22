@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div>
+    <div class="btn-box">
       <input
         type="file"
         :disabled="status !== Status.wait"
@@ -19,10 +19,10 @@
         >暂停</el-button
       >
     </div>
-    <div>
+    <div class="mt20">
       <div>计算文件 hash</div>
       <el-progress :percentage="hashPercentage"></el-progress>
-      <div>总进度</div>
+      <div style="margin-top:20px;">总进度</div>
       <el-progress :percentage="fakeUploadPercentage"></el-progress>
     </div>
     <el-table :data="data">
@@ -283,3 +283,19 @@ export default {
   }
 };
 </script>
+<style>
+#app {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 30px;
+  width: 100%;
+}
+#app > div {
+  width: 50%;
+}
+.mt20 {
+  margin-top: 30px;
+}
+</style>
